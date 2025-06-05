@@ -1,58 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 9%;
-  background: #fff;
-  box-shadow: var(--box-shadows);
-  z-index: 1000;
+:root {
+  --green: #18e06e;
+  --logo-blue: #0657c2;
+  --navbar-link: #444454;
+  --icon-bg: #f4f4f8;
+  --icon-hover: #d6f9d6;
+  --box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  --black: #222;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: var(--white);
+  background: #fff;
 }
 
-/* Logo style */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 0vw 1.1rem 1vw;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+
+/* LOGO */
 .logo {
   display: flex;
-  align-items: center;    /* keeps them level */
-  font-size: 2.5rem;
-  color: var(--black);
-  text-decoration: none;
+  align-items: center;
+  font-size: 1.3rem;
   font-weight: bold;
-  gap: 1rem;              /* space between icon and text */
+  color: var(--logo-blue);
+  text-decoration: none;
+  gap: 0.5rem;
 }
-
 .logo img {
-  height: 48px;           /* <-- Increase this value for a bigger logo */
+  height: 28px;
   width: auto;
   display: block;
 }
+.logo span {
+  color: var(--logo-blue);
+  font-weight: bold;
+}
 
-/* Navbar style */
+/* NAVBAR CENTERED */
 .navbar {
   display: flex;
-  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  flex: 1 1 auto;
+  min-width: 0;
 }
-
 .navbar a {
-  color: var(--black);
-  font-size: 1.7rem;
+  color: var(--navbar-link);
+  font-size: 1.02rem;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.2s;
+  white-space: nowrap;
 }
-
 .navbar a:hover {
   color: var(--green);
-  text-decoration: underline;
+}
+
+/* RIGHT ICONS */
+.right-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  min-width: 0;
+  margin-right: 3rem;  /* <-- THIS MOVES THEM LEFT! */
+}
+
+.right-icons a {
+  background: var(--icon-bg);
+  border-radius: 0.3em;
+  padding: 0.23em 0.7em;
+  color: #222342;
+  font-size: 1.13rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s, color 0.2s;
+  margin-left: 0.12em;
+}
+.right-icons a:hover {
+  background: var(--icon-hover);
+  color: var(--green);
+}
+
+/* SEARCH FORM (popup style, not always visible) */
+.header .search-form {
+    border: 1px solid #bbb;
+    position: absolute;
+    top: 110%;
+    right: 2rem;
+    max-width: 18rem;    /* wide but not huge */
+    min-width: 10rem;    /* optional: keeps it usable on small screens */
+    width: 100%;
+    height: 2.2rem;      /* short! */
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+.header .search-form input {
+    width: 100%;
+    height: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1rem;        /* smaller font */
+    color: var(--black);
+    padding: 0 0.8rem;      /* less padding */
+    border: none;
+    outline: none;
+}
+.header .search-form label{
+    font-size: 1.3rem;      /* smaller icon */
+    padding-right: 0.6rem;  /* less space */
+    color: var(--black);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.header .search-form label:hover{
+    color: var(--green);
+}
+
+/* Responsive tweaks (optional) */
+@media (max-width: 900px) {
+  .navbar {
+    gap: 1rem;
+    font-size: 0.96rem;
+  }
+  .logo {
+    font-size: 1rem;
+  }
 }
