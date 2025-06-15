@@ -17,6 +17,23 @@ body {
   background: #fff;
 }
 
+.btn{
+  border: .2em solid var(--black);
+  margin-top: .2rem;
+  display: inline-block;
+  padding: .8rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--green);
+  color: #fff;
+  transition: background 0.2s, color 0.2s;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -122,7 +139,7 @@ body {
 
 .header .search-form.active {
     right: 2rem;            /* show it */
-    transition: 0.2s linear;
+    transition: 0.1s linear;
 }
 
 
@@ -165,14 +182,18 @@ body {
   border: 0px solid;
   position: absolute;
   top: 100%;
-  right: 2rem;
+  right: -110%;
   padding: 0.7rem;
   border-radius: .5rem;
   box-shadow: var(--box-shadow);
   width: 20rem;
   background: #fff;
+  transition: right 0.1s linear;
 }
 
+.header .shopping-cart.active {
+  right: 2rem;
+}
 .header .shopping-cart .box {
   position: relative;        /* ADDED: This is important for absolute positioning the trash icon! */
   border: 0px solid blue;
@@ -198,4 +219,32 @@ body {
 
 .header .shopping-cart .box .fa-trash:hover {
   color: var(--green);
+}
+
+.header .shopping-cart .box .content {
+  color: var(--black);
+  font-size: 1.1rem;
+  padding-bottom: .5rem;
+}
+
+.header .shopping-cart .box .content span {
+  color: var(--light-color);
+  font-size: 1rem;
+}
+
+.header .shopping-cart .box .content .quantity {
+  padding-left: 1rem;
+}
+
+.header .shopping-cart .total{
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  text-align: center;
+  color: var(--black);
+}
+
+.header .shopping-cart .btn {
+  display: block;
+  text-align: center;
+  margin: 1rem 0;
 }
