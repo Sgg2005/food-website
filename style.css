@@ -26,6 +26,7 @@ body {
   border-radius: 1rem;
   color: var(--black);
   cursor: pointer;
+  background: none;
 }
 
 .btn:hover {
@@ -247,4 +248,35 @@ body {
   display: block;
   text-align: center;
   margin: 1rem 0;
+}
+
+.header .login-form{
+  border: 1px solid;
+  position: absolute;
+  width: 20rem;
+  top: 110%;
+  right: 2rem;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  border-radius: .5rem;
+  background: #fff;
+  text-align: center;
+}
+
+.header .login-form h4 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.header .login-form .box{
+  width: 90%;
+  border: 1px solid;
+  margin: .7rem 0;
+  background: #eee;
+  border-radius: .5rem;
+  padding: .5rem;
+  font-size: 1rem;
+  color: var(--black);
+  text-transform: none;
 }
