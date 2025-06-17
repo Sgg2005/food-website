@@ -250,12 +250,16 @@ body {
   margin: 1rem 0;
 }
 
+.header .login-form.active {
+  right: 2rem;
+  transition: .1s linear;
+}
 .header .login-form{
   border: 1px solid;
   position: absolute;
   width: 20rem;
   top: 110%;
-  right: 2rem;
+  right: -110%;
   box-shadow: var(--box-shadow);
   padding: 1rem;
   border-radius: .5rem;
@@ -279,4 +283,15 @@ body {
   font-size: 1rem;
   color: var(--black);
   text-transform: none;
+}
+
+.header .login-form p{
+  font-size: 1rem;
+  padding: .5rem 0;
+  color: var(--light-color);
+}
+
+.header .login-form p a{
+  color: var(--green);
+  text-decoration: underline;
 }

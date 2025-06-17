@@ -22,3 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!shoppingCart) console.error('No element with class="shopping-cart"');
   }
 });
+
+let loginForm = document.getElementById('login-form');
+
+document.querySelector('.login-btn').onclick = () =>
+{
+  loginForm.classList.toggle('active');
+}
