@@ -119,6 +119,15 @@ body {
   color: var(--green);
 }
 
+#menu-btn{
+  display: none;
+}
+
+.header.navbar.active{
+  right: 2rem;
+  transition: .4s linear;
+}
+
 /* SEARCH FORM (popup style, not always visible) */
 .header .search-form {
     border: 1px solid #bbb;
@@ -307,13 +316,26 @@ body {
 }
 
 @media (max-width: 768px){
+  #menu-btn{
+    display: inline-block;
+  }
+
   .header .navbar{
     position: absolute;
     top: 110%;
-    right: 2rem;
+    right: -110%;
     width: 30rem;
     box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    background: #fff;
   }
+
+   .header .navbar a{
+    font-size: 1rem; 
+    margin: 1rem 1.5rem;
+    display: block;
+  }
+
 }
 
 @media (max-width: 450px){
